@@ -1,7 +1,7 @@
 {
   "name": "countries",
   "private": true,
-  "homepage": "",
+  "homepage": "https://blzs101.github.io/Countries/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "host": "vite --host",
     "predeploy": "",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "axios": "^1.4.0",
