@@ -29,7 +29,7 @@ function App() {
     <div className={`${darkMode ? "text-white bg-very-dark-blue-bg" : "text-black bg-very-light-grey-bg"} inset-0 w-full h-full fixed overflow-auto`}>
       <BrowserRouter >
         <header className={`flex items-center justify-center h-[72px] ${darkMode ? "text-white bg-dark-blue-element" : "text-black bg-very-light-grey-bg"} mb-4`}>
-          <a href="/" className="p-6 mr-auto font-extrabold"><h1>Where in the word?</h1></a>
+          <a href="/Countries" className="p-6 mr-auto font-extrabold"><h1>Where in the word?</h1></a>
           <div className="flex p-6">
             <img src={darkMode ? "public/moon darkmode.svg" : "public/moon lightmode.svg"} className="h-auto"></img>
             <button type="button" onClick={() => setDarkMode(!darkMode)} className="ml-1 font-semibold">Dark mode</button>
