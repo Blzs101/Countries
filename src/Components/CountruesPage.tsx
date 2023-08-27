@@ -20,7 +20,7 @@ function CountriesPage({ img, alt, name, nativeName, population, region, subRegi
     const theme = useContext<boolean>(DarkModeContext);
     return (
         <main className="w-auto h-auto mx-5 mb-4 overflow-hidden md:mx-8">
-            <NavLink to="/" className={`${theme ? "text-white bg-dark-blue-element" : "text-black bg-white"} my-8  px-12 py-2 flex w-32 justify-center content-center rounded-md`}>
+            <NavLink to="/Countries" className={`${theme ? "text-white bg-dark-blue-element" : "text-black bg-white"} my-8  px-12 py-2 flex w-32 justify-center content-center rounded-md`}>
                 <img src={`${theme ? "public/arrow-darkmode.svg" : "public/arrow-lightmode.svg"} `} className="mr-2" />
                 Back
             </NavLink>
@@ -43,7 +43,7 @@ function CountriesPage({ img, alt, name, nativeName, population, region, subRegi
                     <div className={`${borders ? "block" : "hidden"}  grid grid-cols-3 xl:flex flex-wrap  gap-2 h-auto`}>
                         <div className="flex content-center justify-start col-span-3 py-2 font-bold xl:justify-center">Border Countries: </div>
                         {borders ? borders.map((element: string) => {
-                            return <NavLink to={`/${getCountryNameByCode(element)?.toLocaleLowerCase().replace(/\s/g, "")}`} key={element} className={`${theme ? "text-white bg-dark-blue-element" : "text-black bg-white"} p-2 flex w-auto justify-center content-center rounded-md`}>{getCountryNameByCode(element)}</NavLink>
+                            return <NavLink to={`/Countries/${getCountryNameByCode(element)?.toLocaleLowerCase().replace(/\s/g, "")}`} key={element} className={`${theme ? "text-white bg-dark-blue-element" : "text-black bg-white"} p-2 flex w-auto justify-center content-center rounded-md`}>{getCountryNameByCode(element)}</NavLink>
                         }) : null}
                     </div>
                 </div>

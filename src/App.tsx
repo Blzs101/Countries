@@ -36,13 +36,13 @@ function App() {
           </div>
         </header>
         <Routes>
-          <Route path="/" element={
+          <Route path="/Countries" element={
             <DarkModeContext.Provider value={darkMode}>
               <HomePage darkMode={darkMode} fetchedCountries={fetchedCountries} />
             </DarkModeContext.Provider>} />
           {fetchedCountries.status === "success"
             ? fetchedCountries.data.map((element: { flags: { svg: string; alt: string; }; name: { common: string, nativeName: object }; population: number; region: string; capital: string; subregion: string; tld: string[]; languages: string; currencies: string; borders: string[] }) => (
-              <Route path={`/${element.name.common.toLocaleLowerCase().replace(/\s/g, "")}`} key={element.name.common} element={
+              <Route path={`/Countries/${element.name.common.toLocaleLowerCase().replace(/\s/g, "")}`} key={element.name.common} element={
                 <DarkModeContext.Provider value={darkMode}>
                   <CountriesPage img={element.flags.svg} alt={element.flags.alt} name={element.name.common} nativeName={element.name.nativeName} population={element.population} region={element.region} subRegion={element.subregion} capital={element.capital} domain={element.tld?.[0]} currencies={element.currencies} languages={element.languages} borders={element.borders} key={element.name.common} />
                 </DarkModeContext.Provider>

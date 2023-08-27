@@ -29,14 +29,14 @@ export default function HomePage({ fetchedCountries }: any) {
                 {fetchedCountries.status === "success" ?
                     filter === "" && continent === "" ? fetchedCountries.data.map((element: { flags: { svg: string; alt: string; }; name: { common: string }; population: number; region: string; capital: string[]; }) => {
                         return (
-                            <NavLink to={`${element.name.common.toLocaleLowerCase().replace(/\s/g, "")}`} key={element.name.common}>
+                            <NavLink to={`/Countries/${element.name.common.toLocaleLowerCase().replace(/\s/g, "")}`} key={element.name.common}>
                                 < CountriesCard img={element.flags.svg} alt={element.flags.alt} name={element.name.common} population={element.population} region={element.region} capital={element.capital} key={element.name.common} />
                             </NavLink>
                         )
                     }) :
                         fetchedCountries.data.filter((element: { name: { common: string } }) => { return filter !== "" ? element.name.common.toLocaleLowerCase().includes(filter.toLocaleLowerCase()) : element }).filter((element: { region: string }) => { return continent !== "" ? element.region === `${continent}` : element }).map((element: { flags: { svg: string; alt: string; }; name: { common: string }; population: number; region: string; capital: string[]; }) => {
                             return (
-                                <NavLink to={`${element.name.common.toLocaleLowerCase().replace(/\s/g, "")}`} key={element.name.common}>
+                                <NavLink to={`/Countries/${element.name.common.toLocaleLowerCase().replace(/\s/g, "")}`} key={element.name.common}>
                                     < CountriesCard img={element.flags.svg} alt={element.flags.alt} name={element.name.common} population={element.population} region={element.region} capital={element.capital} key={element.name.common} />
                                 </NavLink>
                             )
