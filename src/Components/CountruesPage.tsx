@@ -20,7 +20,7 @@ function CountriesPage({ img, alt, name, nativeName, population, region, subRegi
     const theme = useContext<boolean>(DarkModeContext);
     return (
         <main className="w-auto h-auto mx-5 mb-4 overflow-hidden md:mx-8">
-            <NavLink to="/Countries" className={`${theme ? "text-white bg-dark-blue-element" : "text-black bg-white"} my-8  px-12 py-2 flex w-32 justify-center content-center rounded-md`}>
+            <NavLink to="/Countries/" className={`${theme ? "text-white bg-dark-blue-element" : "text-black bg-white"} my-8  px-12 py-2 flex w-32 justify-center content-center rounded-md`}>
                 <img src={`${theme ? "public/arrow-darkmode.svg" : "public/arrow-lightmode.svg"} `} className="mr-2" />
                 Back
             </NavLink>
