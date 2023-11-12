@@ -81,7 +81,7 @@ export default function HomePage({ fetchedCountries }: { fetchedCountries: UseQu
                         ? fetchedCountries?.data.map((element: elementType) => {
                             return (
                                 <NavLink
-                                    to={`/${element.name.common
+                                    to={`/Countries/${element.name.common
                                         .toLocaleLowerCase()
                                         .replace(/\s/g, '')}`}
                                     key={element.name.common}
@@ -115,7 +115,7 @@ export default function HomePage({ fetchedCountries }: { fetchedCountries: UseQu
                                 (element: elementType) => {
                                     return (
                                         <NavLink
-                                            to={`/${element.name.common
+                                            to={`/Countries/${element.name.common
                                                 .toLocaleLowerCase()
                                                 .replace(/\s/g, '')}`}
                                             key={element.name.common}

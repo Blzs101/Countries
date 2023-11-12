@@ -44,7 +44,7 @@ function App() {
             : 'text-black bg-very-light-grey-bg'
             } mb-4`}
         >
-          <a href="/" className="p-6 mr-auto font-extrabold">
+          <a href="/Countries" className="p-6 mr-auto font-extrabold">
             <h1>Where in the word?</h1>
           </a>
           <div className="flex p-6">
@@ -67,7 +67,7 @@ function App() {
         </header>
         <Routes>
           <Route
-            path="/"
+            path="/Countries"
             element={
               <DarkModeContext.Provider value={darkMode}>
                 <HomePage
@@ -79,7 +79,7 @@ function App() {
           {fetchedCountries.status === 'success'
             ? fetchedCountries.data.map((element: elementType) => (
               <Route
-                path={`/${element.name.common
+                path={`/Countries/${element.name.common
                   .toLocaleLowerCase()
                   .replace(/\s/g, '')}`}
                 key={element.name.common}
